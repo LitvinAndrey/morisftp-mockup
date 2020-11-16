@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>MorisFTP</title>
+</head>
+<body>
+    <div class="main">
+        <aside>
+            <img class="logo" src="assets/png/logo.png" alt="MorisFTP">
+            <div class="tree_container">
+                <div class="tree_root chevron chevron_open">
+                    <div class="tree_disk_icon"></div>
+                </div>
+                <div class="tree_nested_container">
+                    <div class="all_files tree_nested_item">
+                        <div class="all_files_icon icon"></div>
+                        <div class="tree_nested_item_label">Все файлы</div>
+                    </div>
+                    <div class="chevron chevron-closed tree_nested_item">
+                        <div class="folder-icon icon"></div>
+                        <div class="tree_nested_item_label">черные коты</div>
+                    </div>
+                    <div class="chevron chevron-closed tree_nested_item">
+                        <div class="folder-icon icon"></div>
+                        <div class="tree_nested_item_label">30 оттенков</div>
+                    </div>
+                    <div class="tree_nested_item">
+                        <div class="folder-icon icon"></div>
+                        <div class="tree_nested_item_label">балдёж</div>
+                    </div>
+                    <div class="chevron chevron-closed tree_nested_item">
+                        <div class="orange folder-icon icon"></div>
+                        <div class="tree_nested_item_label">другие</div>
+                    </div>
+                </div>
+            </div>
+            <div class="new_folder_container">
+                <div class="new_folder_content">
+                    <div class="new_folder_icon"></div>
+                    <span class="new_folder_text">Создать и добавить новую папку</span>
+                    <button class="new_folder_add_button">Добавить</button>
+                    <div class="new_folder_settings">Настройки</div>
+                </div>
+            </div>
+        </aside>
+        <div class="main-content">
+            <div class="main-toolbar">
+                <div class="search-input">
+                    <input type="text" placeholder="Найти"/>
+                </div>
+                <div class="main-toolbar-left">
+                    <div class="notification notification-icon"></div>
+                    <img class="burger-icon" onclick="onToggle()" src="assets/svg/burger.svg"/>
+                </div>
+            </div>
+            <div class="image-select">
+                <div class="image-select-toolbar">
+                    <div class="image-select-toolbar-title">Объекты</div>
+                    <div class="image-select-toolbar-selections">
+                        <div class="image-select-toolbar-selection-item selected">Все объекты</div>
+                        <div class="image-select-toolbar-selection-item">Другие</div>
+                        <div class="image-select-toolbar-selection-item">Новые</div>
+                    </div>
+                </div>
+                <div class="image-select-scroll-container">
+                    <div class="image-select-content">
+                        <div class="image-select-item ">
+                            <img src="assets/png/black-cats.png" alt="Черные коты - это моя жизнь"/>
+                            <div class="image-select-item-label">Черные коты - это моя жизнь</div>
+                            <div class="image-select-item-counter">14534563 объектов</div>
+                        </div>
+                        <div class="image-select-item">
+                            <img src="assets/png/hisoka.png" alt="Черные коты - это моя жизнь"/>
+                            <div class="image-select-item-label">30 оттенков Хисоки</div>
+                            <div class="image-select-item-counter">30 объектов</div>
+                        </div>
+                        <div class="image-select-item">
+                            <img src="assets/png/baldezh.png" alt="Балдёж"/>
+                            <div class="image-select-item-label">Балдёж</div>
+                            <div class="image-select-item-counter">80 объектов</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-select-pagination">
+                    <div class="pagination-arrow"></div>
+                    <div class="pagination-counts">
+                        <div class="pagination-number">1</div>
+                        <span class="pagination-label">of</span>
+                        <div class="pagination-number">4</div>
+                    </div>
+                    <div class="pagination-arrow right"></div>
+                </div>
+            </div>
+        </div>
+        <div class="left-content">
+            <div class="user-info">
+                <img class="avatar" alt="Tonya" src="assets/png/ava.png"/>
+                <div class="username">Tonya</div>
+            </div>
+            <div class="information">
+                <div class="information-label">Информация</div>
+                <div class="information-content">
+                    <div class="photo-icon information-icon">
+                        <img class="photo-icon-image" src="assets/svg/photo.svg">
+                    </div>
+                    <div class="information-description">
+                        <div class="information-icon-label">Фото</div>
+                        <div class="percents">
+                            <div class="percents-ready"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="information-content">
+                    <div class="video-icon information-icon">
+                        <img class="video-icon-image" src="assets/svg/video.svg">
+                    </div>
+                    <div class="information-description">
+                        <div class="information-icon-label">Видео</div>
+                        <div class="percents">
+                            <div class="percents-ready video"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="user-settings">
+                <div class="user-setting-item">
+                    <div class="user-setting-icon"></div>
+                    <div class="user-setting-label">Настройки</div>
+                </div>
+                <div class="user-setting-item" onclick="onExitClick()">
+                    <div class="user-setting-icon exit"></div>
+                    <div class="user-setting-label">Выйти</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="application/javascript" src="scripts/main.js"></script>
+</body>
+</html>
